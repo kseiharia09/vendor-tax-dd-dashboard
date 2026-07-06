@@ -104,7 +104,18 @@ export const checklistItems = [
   { id: 12, area: "Compliance", item: "Verify TDS/TCS compliance and defaults", status: "complete" as const, assignee: "Vikram Singh" },
 ];
 
-export const issues = [
+export type Issue = {
+  id: string;
+  title: string;
+  priority: "Critical" | "High" | "Medium" | "Low";
+  status: "Open" | "In Review" | "Resolved";
+  owner: string;
+  area: string;
+  raisedDate: string;
+  dueDate: string;
+};
+
+export const issues: Issue[] = [
   { id: "ISS-001", title: "Undisclosed GST demand of ₹2.4 Cr for FY22", priority: "Critical" as const, status: "Open" as const, owner: "Neha Gupta", area: "Indirect Tax", raisedDate: "2026-03-05", dueDate: "2026-03-12" },
   { id: "ISS-002", title: "Missing TP documentation for Singapore subsidiary transactions", priority: "Critical" as const, status: "In Review" as const, owner: "Arjun Patel", area: "Transfer Pricing", raisedDate: "2026-03-08", dueDate: "2026-03-15" },
   { id: "ISS-003", title: "Discrepancy in MAT credit carry-forward (₹1.8 Cr variance)", priority: "Critical" as const, status: "Open" as const, owner: "Arjun Patel", area: "Direct Tax", raisedDate: "2026-03-10", dueDate: "2026-03-18" },
